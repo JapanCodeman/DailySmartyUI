@@ -5,6 +5,7 @@ class SearchBar extends Component {
 
   handleFormSubmit = function({query}) {
     console.log("Trying to handle query", query)
+    // navigate to a new route
   }
 
   renderInput(field) {
