@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
+import Post from './post';
 
 class ResultsPosts extends Component {
+
+  renderPosts() {
+    const posts = this.props.posts.map((post, index) => {
+      return <Post type="result" key={index} {...post}/>
+    })
+    return posts;
+  }
+
   render () {
     return (
       <div>
         <div className="results-posts">
           <div className="results-posts-wrapper">
             <ul className="results-posts-posts">
-              Results go here
+              {this.renderPosts()}
             </ul>
           </div>
         </div>
@@ -20,7 +29,7 @@ class ResultsPosts extends Component {
 
 function mapStateToProps(state) {
   return {
-    state
+    posts: state.posts.resultsPosts
   }
 }
 
