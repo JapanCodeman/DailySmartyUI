@@ -1,0 +1,7 @@
+@mixin default-page-layout {
+  height: 100vh;
+  width: 66vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: space-around;
+}
